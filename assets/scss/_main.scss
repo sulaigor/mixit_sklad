@@ -1,0 +1,83 @@
+.main {
+    width: 100%;
+    min-height: 40em;
+    
+    background: url('../img/mani-bg_pattern.png') lighten($main-bg, 20%);
+    color: lighten($main-color, 35%);
+    border-radius: .3em;
+    
+    margin-bottom: 0;
+    padding-bottom: .6em;
+    
+    & .container-fluid {        
+        padding: {
+            left: .5em;
+            right: .5em;
+        }
+    }
+}
+
+.main-header {
+    height: 6em;
+    
+    & h1 {
+        padding: .5em 1em;
+        margin: 0;
+        font-weight: 100;
+        letter-spacing: .06em;
+        text-shadow: -2px 2px 2px rgba($main-shadow , .6);        
+    }
+    
+    & .header-content {
+        & ul {
+            text-align: right;
+        }
+        
+        & li {
+            display: inline-block;
+            min-height: 5em;
+            text-align: left;
+            vertical-align: top;
+            border-right: 2px solid lighten($text-primary, 10%);
+            
+            margin: .4em 0;
+            
+            &:first-child {                
+                text-align: center;
+                padding-top: .9em;    
+            }
+            
+            &:last-child {
+                border-right: none;
+                padding-right: 0;
+            }
+            
+            & p {
+                margin-bottom: .2em;
+                
+                & span {
+                    letter-spacing: .06em;
+                }
+            }
+        }
+    }
+}
+
+.main-content {    
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    
+    min-height: 35em;    
+    padding: 1em 0;
+    background: url('../img/users-bg_pattern.png') $content-bg;
+    color: $content-color;
+    border-radius: .3em;
+    box-shadow: -1px 1px 6px 2px rgba($main-shadow , .6);
+    
+    & h3,
+    & h4,
+    & h5 {
+        color: darken($content-color, 20%);
+    }
+}

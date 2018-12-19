@@ -1,0 +1,76 @@
+/* general */
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+/* element border */
+/** { outline: 3px solid black; } */
+
+@import 'variables';
+@import 'mixins';
+
+html, body { height: 100%; }
+
+body {
+    max-width: $body-width;
+    margin: 0 auto;
+    background: url('../img/body-bg_pattern.png') $main-bg;    
+    color: $main-color;
+    font: {
+        size: 100%;
+        family: $main-font;
+    }    
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: $main-color;
+    
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+p {
+    margin-bottom: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.text-primary {
+    color: $text-primary !important;
+}
+
+.text-success {
+    color: $text-success !important;
+}
+
+.bg-success {
+    background: $text-success !important;
+}
+
+.text-danger {
+    color: $text-danger !important;
+}
+
+.bg-danger {
+    background: $text-danger !important;
+}
+
+@import 'debug';
+@import 'parts';
+@import 'main';
+@import 'pages';

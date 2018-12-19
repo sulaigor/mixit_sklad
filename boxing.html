@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="Igor Šula">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>mixit / Kompletace balíků</title>
+</head>
+
+<body>
+    <header class="header container-fluid">
+        <nav class="navigation">
+            <ul class="user-nav">
+                <li><a class="selected" href=""><i class="fas fa-box"></i>Kompletace balíků</a></li>
+                <li><a href="setting.html"><i class="fas fa-cog"></i>Nastavení</a></li>
+            </ul>
+            <ul class="admin-nav">
+                <li><a href="tests.html"><i class="fas fa-tachometer-alt"></i>Testy</a></li>
+            </ul>
+        </nav>
+        <div class="login-btn">
+            <a href="login.html">Přihlásit se</a>
+            <p>Igor Šula</p>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container-fluid">
+            <header class="main-header row">
+                <h1 class="col-6">Kompletace balíku</h1>
+                       
+                <div class="header-content col-6">
+                    <ul>
+                        <li class="col-2">
+                            <p class="text-primary">osobní odběr</p>
+                            <p class="text-primary">platební karta</p>
+                        </li>
+                        <li class="col-4">
+                            <p>Stav platby: <span class="text-success">zaplacena</span></p>
+                            <p>Datum vytvoření: <span class="text-primary">15.12.2018 23:00</span></p>
+                            <p>Datum zaplacení: <span class="text-primary">15.12.2018 23:00</span></p>
+                        </li>
+                        <li class="col-3">
+                            <p>Variabilní číslo: <span class="text-primary">9876543210</span></p>
+                            <p>Lokalizace: <span class="text-primary">CS</span></p>                  
+                        </li>
+                    </ul>                    
+                </div>              
+            </header>
+            
+            <section class="boxing main-content">
+                <div class="table col-8">
+                    <ul>
+                        <li class="row">
+                            <p class="col-6">Název</p>
+                            <p class="col-3">Počet ks</p>
+                            <p class="col-3">Druh</p>
+                        </li>                        
+                        <li class="row bg-success">
+                            <p class="col-6"><i class="fas fa-check-circle"></i>Vánoční mix</p>
+                            <p class="col-3">1/1</p>
+                            <p class="col-3">hotovka</p>
+                        </li>                        
+                        <li class="row bg-danger">
+                            <p class="col-6"><i class="fas fa-times-circle"></i>Jiný mix</p>
+                            <p class="col-3">0/1</p>
+                            <p class="col-3">hotovka</p>
+                        </li>
+                    </ul>
+                    <div class="table-foot row">
+                        <div class="fake-input col-6">
+                            <span></span>
+                        </div>
+                        
+                        <p>Počet položek: <span>2</span></p>
+                    </div>                    
+                </div>
+                <div class="state col-4">
+                    <section>
+                       <h4>Stav kompletace</h4>
+                        <p class="text-success"><i class="fas fa-check-circle"></i>Objednávka načtena</p>
+                        <p class="text-danger"><i class="fas fa-times-circle"></i>Načti všechny položky</p>
+                        <p class="text-danger"><i class="fas fa-times-circle"></i>Dokonči kompletaci</p>
+                    </section>
+                    <section>
+                        <h4>Potvrzení</h4>
+                        <button type="button" class="btn btn-secondary btn-lg btn-block col-md-10">Potvrzuji, že jsem nalepil štítky na všechny položky</button>
+                    </section>                    
+                    <section>
+                        <h4>Zrušit</h4>
+                        <button type="button" class="btn btn-secondary btn-lg btn-block col-md-6">Zrušit kompletaci</button>
+                    </section>                  
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

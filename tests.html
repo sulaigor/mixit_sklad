@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="Igor Šula">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>mixit / Nastavení</title>
+</head>
+
+<body>
+    <header class="header container-fluid">
+        <nav class="navigation">
+            <ul class="user-nav">
+                <li><a href="login.html"><i class="fas fa-box"></i>Kompletace balíků</a></li>
+                <li><a href="setting.html"><i class="fas fa-cog"></i>Nastavení</a></li>
+            </ul>
+            <ul class="admin-nav">
+                <li><a class="selected" href=""><i class="fas fa-tachometer-alt"></i>Testy</a></li>
+            </ul>
+        </nav>
+        <div class="login-btn">
+            <a href="login.html">Přihlásit se</a>
+            <p>Igor Šula</p>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container-fluid">
+            <header class="main-header">
+                <h1>Testy</h1>                
+            </header>
+            <article class="tests main-content">
+                <section class="test-header col-10">
+                    <div class="input-group mb-3 col-sm-12 col-md-10 col-lg-8">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="selectTest">Zvolte test</label>
+                        </div>
+                        <select class="custom-select" id="selectTest">
+                            <option value="1" selected>Obecné testy</option>
+                            <option value="2">Test TSC tiskárny</option>
+                            <option value="3">Test čárového kódu</option>
+                            <option value="4">Test Qit kódu</option>
+                            <option value="5">Test OS štítku</option>
+                            <option value="6">Test CP štítku</option>
+                            <option value="7">Test PPL štítku</option>
+                            <option value="8">Test Mixit štítku</option>
+                            <option value="9">Test GLS</option>
+                            <option value="10">CP kód</option>
+                        </select>
+                    </div>
+                </section>
+                <section class="test-content col-10">
+                    <h3>Test TSC štítku pro PPL</h3>
+                    <form class="test-forms">
+                        <div class="col-5">
+                            <div class="form-group row">
+                                <label for="BoxID" class="col-md-4 col-form-label">ID balíku</label>
+                                <div class="col-md-8">
+                                    <input type="email" class="form-control" id="BoxID">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="VarSymbol" class="col-md-4 col-form-label">Variabilní symbol</label>
+                                <div class="col-md-8">
+                                    <input type="email" class="form-control" id="VarSymbol">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="Price" class="col-md-4 col-form-label">Cena objednávky</label>
+                                <div class="col-md-8">
+                                    <input type="email" class="form-control" id="Price">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="PreNum" class="col-md-4 col-form-label">Předvolba telefonu</label>
+                                <div class="col-md-8">
+                                    <input type="email" class="form-control" id="PreNum" placeholder="+420">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="Phone" class="col-md-4 col-form-label">Telefon</label>
+                                <div class="col-md-8">
+                                    <input type="email" class="form-control" id="Phone">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="Company" class="col-md-4 col-form-label">Firma</label>
+                                <div class="col-md-8">
+                                    <input type="email" class="form-control" id="Company">
+                                </div>
+                            </div>
+                            <div class="form-group form-check">
+                                <label class="col-md-4 form-check-label" for="Delivery">Dobírka</label>
+                                <input type="checkbox" class="form-check-input" id="Delivery">
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="form-group row">
+                                <label for="FirstName" class="col-md-4 col-form-label">Jméno</label>
+                                <div class="col-md-8">
+                                    <input type="email" class="form-control" id="FirstName">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="LastName" class="col-md-4 col-form-label">Přijmení</label>
+                                <div class="col-md-8">
+                                    <input type="email" class="form-control" id="LastName">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="Street" class="col-md-4 col-form-label">Ulice</label>
+                                <div class="col-md-8">
+                                    <input type="email" class="form-control" id="Street">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="Town" class="col-md-4 col-form-label">Město</label>
+                                <div class="col-md-8">
+                                    <input type="email" class="form-control" id="Town">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="PostCode" class="col-md-4 col-form-label">PSČ</label>
+                                <div class="col-md-8">
+                                    <input type="email" class="form-control" id="PostCode">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="Country" class="col-md-4 col-form-label">Země</label>
+                                <div class="col-md-8">
+                                    <input type="email" class="form-control" id="Country" placeholder="Česká Republika">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="NumBox" class="col-md-4 col-form-label">Aktuální číslo balíku</label>
+                                <div class="col-md-8">
+                                    <input type="email" class="form-control" id="NumBox">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="AllBox" class="col-md-4 col-form-label">Celkem balíků</label>
+                                <div class="col-md-8">
+                                    <input type="email" class="form-control" id="AllBox" placeholder="1">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <button type="button" class="btn btn-secondary btn-lg btn-block col-md-4">Vytisknout zkušební etiketu</button>
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
