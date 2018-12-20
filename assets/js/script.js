@@ -1,6 +1,6 @@
 'use strict';
 
-let login = document.getElementById('login');
+let login = document.getElementById('login-form');
 let escape = document.getElementById('escape');
 let users = document.querySelectorAll('.users li');
 let active = 'active';

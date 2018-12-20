@@ -1,30 +1,30 @@
-.users {    
+.users {
     & li {
         text-align: center;
         padding: 0;
         min-height: 10em;
         cursor: pointer;
         border-radius: .5em;
-        
+
         @include transition;
-        
+
         &:hover,
         &:focus {
             color: #000;
-            
+
             & img {
                 opacity: 1;
             }
-        }   
-        
+        }
+
         & img {
             @include transition;
-            
+
             width: 6em;
             margin-top: .5em;
-            opacity: .6;            
+            opacity: .6;
         }
-        
+
         & span {
             display: block;
             font-weight: bold;
@@ -38,32 +38,40 @@
         min-height: 25em;
         margin-left: 5%;
         padding-top: 1em;
-        
+
         &:nth-child(2n) {
             border-left: 2.5px solid $content-color;
             padding-left: 5%;
             margin-left: 0;
         }
-        
+
         & form {
             margin-top: 2em;
         }
     }
-    
+
     & .label {
+        & h3 {
+          //margin-bottom: 1em;
+        }
+
+        & h5 {
+            margin: .5em 0;
+        }
+
         & form {
             & .btn-group {
                 display: flex;
                 justify-content: center;
-                
-                padding: 0;                
+
+                padding: 0;
                 margin: {
                     top: 2em;
                 }
-                                
+
                 & button {
                     margin-right: .1em;
-                    
+
                     &:last-child {
                         margin-right: 0;
                     }
@@ -71,9 +79,9 @@
             }
         }
     }
-    
+
     & .admin {
-        & form {        
+        & form {
             & button {
                 margin: {
                     top: 2em;
@@ -84,10 +92,15 @@
     }
 }
 
+.ean {
+  justify-content: center;
+  align-content: center;
+}
+
 .fake-input {
     display: block;
     max-height: 4em;
-    margin: 0 auto;
+    //margin: 0 auto;
     color: darken($content-color, 20%);
     background: lighten($content-bg, 10%);
     border: 1px solid darken($content-color, 20%);
@@ -95,92 +108,85 @@
     box-shadow: 0px 0px 10px -1px rgba($main-shadow , .6);
     text-align: center;
     line-height: 3.8em;
-    
+
     & span {
         font-size: 125%;
         opacity: .3;
         letter-spacing: .08em;
-        
-        &:before {
-            content: 'Čárový kód';
-        }
-    }
-}
 
-.margin-top {
-    margin-top: 5em;
+        //&:before {
+        //    content: 'Čárový kód';
+        //}
+    }
 }
 
 .tests {
-    display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-content: center;
-    
+
     & section {
         padding: 0;
-        margin-top: 1em;
+        margin-top: 0;
     }
-    
+
     & .test-header {
-        & .input-group {
+      & .input-group {
             padding: 0;
             margin: 0 auto;
         }
     }
-    
+
     & .input-group-prepend {
-        width: 25%;        
+        width: 25%;
     }
-    
+
     & .input-group-text {
         width: 100%;
         padding-left: 32.5%;
     }
-    
+
     & .custom-select {
         text-align: center;
     }
-    
-    & .test-content {    
+
+    & .test-content {
+
         & h3 {
             margin: {
-                bottom: 2em;
+                bottom: 1em;
             }
         }
-        
+
         & button {
-            margin: 2em auto;
+            margin: 1em auto 0;
         }
     }
-    
-    & .test-forms {        
+
+    & .test-forms {
         display: flex;
         justify-content: space-around;
-        
+
 //        & div.col-5:nth-child(2) {
 //            display: none;
 //        }
-        
+
         & .form-check {
             padding-left: 0;
-            
+
             & label {
                 padding: 0;
             }
-            
+
             & input {
                 margin: {
                     top: .4em;
                     left: .7em;
                     right: 0;
                 }
-            }           
+            }
         }
     }
-}
-
-.boxing {
-    padding-top: 1em;
 }
 
 .table-container,
@@ -192,126 +198,141 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-right: 2px solid $tableHead-bg;    
-    
-    & ul {        
-        height: 100%;
-        padding: .4em 1em 0;
-        overflow: auto;
-        
+    border-right: 2px solid $tableHead-bg;
+
+  & ul {
+    max-height: 45em;
+    padding: .4em 1em 0;
+
+    overflow: auto;
+
         & li {
             padding: .4em 0;
             margin-bottom: .3em;
             color: $tableHead-color;
-            
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+
             & p {
                 text-indent: 1em;
-                
+
                 &:first-child {
                     text-indent: 0;
                 }
-                
+
                 & .fas {
                     margin-right: 1em;
                 }
             }
         }
-        
+
         & li:first-child {
-            background: $tableHead-bg;            
+            background: $tableHead-bg;
             border-radius: .3em .3em 0 0;
             margin-bottom: .4em;
-            
+
             & p {
                 border-left: 1px solid $tableHead-color;
                 text-indent: 0;
-                
+
                 &:first-child {
                     border-left: none;
                 }
             }
         }
     }
-    
-    & .table-foot {
-        display: flex;
-        justify-content: flex-end;
-        
-        margin: .5em 0;
-        
-        & p {
-            margin-right: 1em;
-            
-            & span {
-                color: darken($content-color, 20%);
-            }
-        }
-    }    
+}
+
+.table-foot {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.35em;
+
+  & .fake-input {
+    vertical-align: middle;
+    margin: .2em 0 .2em .2em;
+    font-size: 50%;
+  }
+
+  & p {
+    margin-right: 1em;
+    align-self: center;
+
+    & span {
+      color: lighten($content-color, 50%);
+    }
+  }
 }
 
 .state-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: relative;
-    
+
     & section {
         margin-bottom: 2em;
-        
+        padding-left: 1em;
+
         &:last-child {
             margin-bottom: 0;
         }
-        
+
         & p {
             margin-bottom: .2em;
             text-indent: .2em;
-            
+
             &:last-child {
                 margin-bottom: 0;
             }
         }
-        
+
         & .fas {
             margin-right: .4em;
         }
-        
+
         & .btn {
             margin: 1em auto;
         }
     }
-    
+
     & #delete-box {
         position: absolute;
         top: 0;
         right: .5em;
         width: 10em;
-        
+
         & button {
             font-size: 90%;
             margin: 0;
         }
     }
-    
+
     & .information-box {
-        margin-top: 5em;        
-        
-        & ul { 
+        padding-left: 0;
+
+        & ul {
             font-size: 90%;
         }
-        
+
         & li {
             display: inline-block;
             text-align: left;
             border-bottom: 1px solid lighten($text-primary, 40%);
-            
+
             padding-bottom: .4em;
             margin: .4em 0;
-            
+
             &:last-child {
                 border-bottom: none;
                 padding-bottom: 0;
             }
-            
+
             & p {
                 margin-bottom: .5em;
-                
+
                 & span {
                     letter-spacing: .06em;
                 }
