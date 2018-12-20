@@ -15,8 +15,9 @@ html, body {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   max-width: 100%;
-  margin: 0 auto;
   background: url("../img/body-bg_pattern.png") #555;
   color: #aaa;
   font-size: 100%;
@@ -70,15 +71,23 @@ img {
   background: #d0656f !important;
 }
 
+.btn {
+  white-space: normal;
+}
+
 .header {
   position: relative;
-  height: 4em;
+  height: 3.5em;
   font-size: 150%;
   padding: 0 0.3333em;
 }
 
 .footer {
   height: 2em;
+}
+.footer .fake-input {
+  margin: 0.2em 0 0.2em 0.2em;
+  font-size: 50%;
 }
 
 .navigation {
@@ -90,33 +99,28 @@ img {
 .navigation .user-nav li, .navigation .admin-nav li {
   display: inline-block;
 }
-.navigation .user-nav li:after {
-  font-size: 120%;
-  content: "|";
-  margin: 0 0.8em 0 1em;
-}
-.navigation .user-nav li:last-child:after {
-  content: none;
-}
-.navigation .admin-nav li:before {
+.navigation .user-nav li:after, .navigation .admin-nav li:before {
   font-size: 120%;
   content: "|";
   margin: 0 0.9em 0 1em;
+}
+.navigation .user-nav li:last-child:after {
+  content: none;
 }
 .navigation .fas {
   margin-right: 0.5em;
 }
 .navigation a {
+  padding-bottom: 1em;
+  border-bottom: 5px solid #555;
   transition: all 0.4s ease;
-  padding-bottom: 0.5em;
-  border-bottom: 2.5px solid #555;
 }
 .navigation a:hover, .navigation a:focus, .navigation a.selected {
-  color: #f7f7f7;
-  border-bottom-color: #aaa;
+  color: white;
+  border-bottom-color: #0089ff;
 }
 
-#login {
+#login-form {
   display: none;
   position: fixed;
   top: 0;
@@ -127,10 +131,10 @@ img {
   background: rgba(0, 0, 0, 0.7);
   transition: all 0.4s ease;
 }
-#login.active {
+#login-form.active {
   display: block;
 }
-#login .container {
+#login-form .container {
   display: flex;
   position: relative;
   align-items: center;
@@ -139,7 +143,7 @@ img {
   background: #333333;
   border-radius: 1em;
 }
-#login .container #escape {
+#login-form .container #escape {
   position: absolute;
   top: 0;
   left: 0;
@@ -149,10 +153,10 @@ img {
   cursor: pointer;
   transition: all 0.4s ease;
 }
-#login .container #escape:hover, #login .container #escape:focus {
+#login-form .container #escape:hover, #login-form .container #escape:focus {
   opacity: 1;
 }
-#login form > input, #login form > button {
+#login-form form > input, #login-form form > button {
   display: block;
   margin: 0 auto;
   padding: 0.3em 0.6em 0.2em;
@@ -160,16 +164,16 @@ img {
   background: #cccccc;
   outline: none;
   border: 2px solid #fff;
-  border-radius: 0.8em;
+  border-radius: 0.4em;
   transition: all 0.4s ease;
 }
-#login form > input:hover, #login form > input:focus, #login form > button:hover, #login form > button:focus {
+#login-form form > input:hover, #login-form form > input:focus, #login-form form > button:hover, #login-form form > button:focus {
   border-color: #000;
 }
-#login form > input {
+#login-form form > input {
   margin-bottom: 0.6em;
 }
-#login form > button {
+#login-form form > button {
   font-weight: bold;
 }
 
@@ -196,50 +200,62 @@ img {
 }
 
 .main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   width: 100%;
-  min-height: 40em;
-  background: url("../img/mani-bg_pattern.png") #888888;
-  color: white;
+  background: url("../img/users-bg_pattern.png") #ddd;
+  color: #515151;
   border-radius: 0.3em;
   margin-bottom: 0;
   padding-bottom: 0.6em;
 }
 .main .container-fluid {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
 
 .main-header {
-  height: 6em;
+  min-height: 6em;
 }
 .main-header h1 {
   padding: 0.5em 1em;
   margin: 0;
   font-weight: 100;
   letter-spacing: 0.06em;
-  text-shadow: -2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+.main-header .header-content {
+  font-size: 90%;
 }
 .main-header .header-content ul {
   text-align: right;
 }
 .main-header .header-content li {
   display: inline-block;
-  min-height: 5em;
-  text-align: left;
+  text-align: center;
   vertical-align: top;
-  border-right: 2px solid #4d4d4d;
+  border-bottom: 1px solid #999999;
+  padding-bottom: 0.4em;
   margin: 0.4em 0;
 }
-.main-header .header-content li:first-child {
-  text-align: center;
-  padding-top: 0.9em;
-}
 .main-header .header-content li:last-child {
-  border-right: none;
-  padding-right: 0;
+  border-bottom: none;
+  padding-bottom: 0;
 }
 .main-header .header-content li p {
-  margin-bottom: 0.2em;
+  display: inline;
+  margin-left: 0.5em;
+}
+.main-header .header-content li p:after {
+  content: "/";
+  margin: 0 0.4em 0 0.8em;
+  color: #999999;
+}
+.main-header .header-content li p:last-child:after {
+  content: none;
 }
 .main-header .header-content li p span {
   letter-spacing: 0.06em;
@@ -249,12 +265,10 @@ img {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
-  min-height: 35em;
-  padding: 1em 0;
-  background: url("../img/users-bg_pattern.png") #ddd;
+  flex-grow: 1;
+  padding: 0 0 1em;
   color: #888;
   border-radius: 0.3em;
-  box-shadow: -1px 1px 6px 2px rgba(0, 0, 0, 0.6);
 }
 .main-content h3, .main-content h4, .main-content h5 {
   color: #555555;
@@ -318,7 +332,7 @@ img {
 
 .fake-input {
   display: block;
-  height: 4em;
+  max-height: 4em;
   margin: 0 auto;
   color: #555555;
   background: #f7f7f7;
@@ -329,7 +343,7 @@ img {
   line-height: 3.8em;
 }
 .fake-input span {
-  font-size: 150%;
+  font-size: 125%;
   opacity: 0.3;
   letter-spacing: 0.08em;
 }
@@ -386,69 +400,118 @@ img {
   margin-right: 0;
 }
 
-.table {
+.boxing {
+  padding-top: 1em;
+}
+
+.table-container,
+.state-container {
+  height: 100%;
+}
+
+.table-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-right: 2px solid #222;
-  min-height: 33em;
 }
-.table ul {
-  margin: 0.4em 1em 0;
+.table-container ul {
+  height: 100%;
+  padding: 0.4em 1em 0;
+  overflow: auto;
 }
-.table ul li {
-  margin-bottom: 0.2em;
+.table-container ul li {
+  padding: 0.4em 0;
+  margin-bottom: 0.3em;
   color: #eee;
 }
-.table ul li p {
+.table-container ul li p {
   text-indent: 1em;
 }
-.table ul li p:first-child {
+.table-container ul li p:first-child {
   text-indent: 0;
 }
-.table ul li p .fas {
+.table-container ul li p .fas {
   margin-right: 1em;
 }
-.table ul li:first-child {
+.table-container ul li:first-child {
   background: #222;
   border-radius: 0.3em 0.3em 0 0;
   margin-bottom: 0.4em;
 }
-.table ul li:first-child p {
+.table-container ul li:first-child p {
   border-left: 1px solid #eee;
   text-indent: 0;
 }
-.table ul li:first-child p:first-child {
+.table-container ul li:first-child p:first-child {
   border-left: none;
 }
-.table .table-foot {
+.table-container .table-foot {
   display: flex;
-  justify-content: space-between;
-  padding: 0 1em;
+  justify-content: flex-end;
+  margin: 0.5em 0;
 }
-.table .table-foot .fake-input {
-  margin: 0;
-  font-size: 50%;
+.table-container .table-foot p {
+  margin-right: 1em;
+}
+.table-container .table-foot p span {
+  color: #555555;
 }
 
-.state section {
+.state-container {
+  position: relative;
+}
+.state-container section {
   margin-bottom: 2em;
 }
-.state section:last-child {
+.state-container section:last-child {
   margin-bottom: 0;
 }
-.state section p {
+.state-container section p {
   margin-bottom: 0.2em;
   text-indent: 0.2em;
 }
-.state section p:last-child {
+.state-container section p:last-child {
   margin-bottom: 0;
 }
-.state section .fas {
+.state-container section .fas {
   margin-right: 0.4em;
 }
-.state section .btn {
+.state-container section .btn {
   margin: 1em auto;
+}
+.state-container #delete-box {
+  position: absolute;
+  top: 0;
+  right: 0.5em;
+  width: 10em;
+}
+.state-container #delete-box button {
+  font-size: 90%;
+  margin: 0;
+}
+.state-container .information-box {
+  margin-top: 5em;
+}
+.state-container .information-box ul {
+  font-size: 90%;
+}
+.state-container .information-box li {
+  display: inline-block;
+  text-align: left;
+  border-bottom: 1px solid #999999;
+  padding-bottom: 0.4em;
+  margin: 0.4em 0;
+}
+.state-container .information-box li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.state-container .information-box li p {
+  margin-bottom: 0.5em;
+}
+.state-container .information-box li p span {
+  letter-spacing: 0.06em;
 }
 
 /*# sourceMappingURL=style.css.map */

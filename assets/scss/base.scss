@@ -11,8 +11,10 @@ html { box-sizing: border-box; }
 html, body { height: 100%; }
 
 body {
+    display: flex;
+    flex-direction: column;
+    
     max-width: $body-width;
-    margin: 0 auto;
     background: url('../img/body-bg_pattern.png') $main-bg;    
     color: $main-color;
     font: {
@@ -68,6 +70,10 @@ img {
 
 .bg-danger {
     background: $text-danger !important;
+}
+
+.btn {
+    white-space: normal;
 }
 
 @import 'debug';

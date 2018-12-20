@@ -1,16 +1,20 @@
 .header {
     position: relative;
-    height: 4em;
+    height: 3.5em;
     font-size: 150%;
     padding: 0 .3333em;
 }
 
 .footer {
     height: 2em;
+    
+    & .fake-input {
+        margin: .2em 0 .2em .2em;
+        font-size: 50%;
+    }
 }
 
 .navigation {
-//    width: 80%;
     font-size: 90%;
     display: flex;
     justify-content: center;
@@ -23,49 +27,37 @@
         }
     }
     
-    & .user-nav {
-        & li {
-            &:after {
-                font-size: 120%;
-                content: '|';
-                margin: 0 .8em 0 1em;
-            }
-
-            &:last-child:after {
-                content: none;
-            }
-        }
+    & .user-nav li:after,
+    & .admin-nav li:before {
+        font-size: 120%;
+        content: '|';
+        margin: 0 .9em 0 1em;        
     }
     
-    & .admin-nav {            
-        & li {
-            &:before {
-                font-size: 120%;
-                content: '|';
-                margin: 0 .9em 0 1em;
-            }
-        }
-    }    
+    & .user-nav li:last-child:after {
+        content: none;
+    }
     
     & .fas {
         margin-right: .5em;
     }
     
     & a {
+        padding-bottom: 1em;
+        border-bottom: 5px solid $main-bg;
+        
         @include transition;
-        padding-bottom: .5em;
-        border-bottom: 2.5px solid $main-bg;
         
         &:hover,
         &:focus,
         &.selected {
-            color: lighten($main-color, 30%);            
-            border-bottom-color: $main-color;
+            color: lighten($main-color, 35%);            
+            border-bottom-color: $header-br;
         }
     }
 }
 
-#login {
+#login-form {
     display: none;
     position: fixed;
     top: 0;
@@ -118,7 +110,7 @@
             background: darken($form-bg, 20%);
             outline: none;
             border: 2px solid $form-bg;
-            border-radius: .8em;
+            border-radius: .4em;
             
             @include transition;
             

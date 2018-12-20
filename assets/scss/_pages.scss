@@ -86,7 +86,7 @@
 
 .fake-input {
     display: block;
-    height: 4em;
+    max-height: 4em;
     margin: 0 auto;
     color: darken($content-color, 20%);
     background: lighten($content-bg, 10%);
@@ -97,7 +97,7 @@
     line-height: 3.8em;
     
     & span {
-        font-size: 150%;
+        font-size: 125%;
         opacity: .3;
         letter-spacing: .08em;
         
@@ -179,20 +179,29 @@
     }
 }
 
-.table {
+.boxing {
+    padding-top: 1em;
+}
+
+.table-container,
+.state-container {
+    height: 100%;
+}
+
+.table-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
-    border-right: 2px solid $tableHead-bg;
-    min-height: 33em;
+    border-right: 2px solid $tableHead-bg;    
     
     & ul {        
-        margin: .4em 1em 0;
+        height: 100%;
+        padding: .4em 1em 0;
+        overflow: auto;
         
         & li {
-//            min-height: 30em;
-            margin-bottom: .2em;
+            padding: .4em 0;
+            margin-bottom: .3em;
             color: $tableHead-color;
             
             & p {
@@ -226,17 +235,23 @@
     
     & .table-foot {
         display: flex;
-        justify-content: space-between;
-        padding: 0 1em;        
+        justify-content: flex-end;
         
-        & .fake-input {
-            margin: 0;
-            font-size: 50%;
+        margin: .5em 0;
+        
+        & p {
+            margin-right: 1em;
+            
+            & span {
+                color: darken($content-color, 20%);
+            }
         }
     }    
 }
 
-.state {
+.state-container {
+    position: relative;
+    
     & section {
         margin-bottom: 2em;
         
@@ -259,6 +274,48 @@
         
         & .btn {
             margin: 1em auto;
+        }
+    }
+    
+    & #delete-box {
+        position: absolute;
+        top: 0;
+        right: .5em;
+        width: 10em;
+        
+        & button {
+            font-size: 90%;
+            margin: 0;
+        }
+    }
+    
+    & .information-box {
+        margin-top: 5em;        
+        
+        & ul { 
+            font-size: 90%;
+        }
+        
+        & li {
+            display: inline-block;
+            text-align: left;
+            border-bottom: 1px solid lighten($text-primary, 40%);
+            
+            padding-bottom: .4em;
+            margin: .4em 0;
+            
+            &:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+            
+            & p {
+                margin-bottom: .5em;
+                
+                & span {
+                    letter-spacing: .06em;
+                }
+            }
         }
     }
 }

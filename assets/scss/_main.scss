@@ -1,15 +1,23 @@
 .main {
-    width: 100%;
-    min-height: 40em;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     
-    background: url('../img/mani-bg_pattern.png') lighten($main-bg, 20%);
-    color: lighten($main-color, 35%);
+    width: 100%;    
+    
+//    background: url('../img/mani-bg_pattern.png') lighten($main-bg, 20%);
+    background: url('../img/users-bg_pattern.png') $content-bg;
+    color: darken($main-color, 35%);
     border-radius: .3em;
     
     margin-bottom: 0;
     padding-bottom: .6em;
     
     & .container-fluid {        
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        
         padding: {
             left: .5em;
             right: .5em;
@@ -18,42 +26,56 @@
 }
 
 .main-header {
-    height: 6em;
+    min-height: 6em;
     
     & h1 {
         padding: .5em 1em;
         margin: 0;
         font-weight: 100;
         letter-spacing: .06em;
-        text-shadow: -2px 2px 2px rgba($main-shadow , .6);        
+//        text-shadow: -2px 2px 2px rgba($main-shadow , .6);        
     }
     
     & .header-content {
+        font-size: 90%;
+        
         & ul {
             text-align: right;
         }
         
         & li {
             display: inline-block;
-            min-height: 5em;
-            text-align: left;
+//            min-height: 5em;
+            text-align: center;
             vertical-align: top;
-            border-right: 2px solid lighten($text-primary, 10%);
+            border-bottom: 1px solid lighten($text-primary, 40%);
             
+            padding-bottom: .4em;
             margin: .4em 0;
             
-            &:first-child {                
-                text-align: center;
-                padding-top: .9em;    
-            }
+//            &:first-child {                
+//                text-align: center;
+//                padding-top: .9em;    
+//            }
             
             &:last-child {
-                border-right: none;
-                padding-right: 0;
+                border-bottom: none;
+                padding-bottom: 0;
             }
             
             & p {
-                margin-bottom: .2em;
+                display: inline;
+                margin-left: .5em;
+                
+                &:after {
+                    content: '/';
+                    margin: 0 .4em 0 .8em;
+                    color: lighten($text-primary, 40%);
+                }
+                
+                &:last-child:after {
+                    content: none;
+                }
                 
                 & span {
                     letter-spacing: .06em;
@@ -68,12 +90,15 @@
     flex-wrap: wrap;
     align-content: flex-start;
     
-    min-height: 35em;    
-    padding: 1em 0;
-    background: url('../img/users-bg_pattern.png') $content-bg;
+    flex-grow: 1;
+    
+    padding: 0 0 1em;
+//    background: url('../img/users-bg_pattern.png') $content-bg;
     color: $content-color;
     border-radius: .3em;
-    box-shadow: -1px 1px 6px 2px rgba($main-shadow , .6);
+//    box-shadow: -1px 1px 6px 2px rgba($main-shadow , .6);
+    
+//    overflow: auto;
     
     & h3,
     & h4,
