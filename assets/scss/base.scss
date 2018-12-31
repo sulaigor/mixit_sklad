@@ -15,12 +15,18 @@ body {
     flex-direction: column;
     
     max-width: $body-width;
-    background: url('../img/body-bg_pattern.png') $main-bg;    
-    color: $main-color;
+    background: url('../img/body-bg_pattern.png') map-get($main, bg);    
+    color: map-get($main, color);
+    
     font: {
         size: 100%;
         family: $main-font;
     }    
+}
+
+::selection {
+    background: rgba($mixit-color, .5);
+    color: map-get($main, bg);
 }
 
 li {
@@ -34,7 +40,7 @@ ul {
 
 a {
     text-decoration: none;
-    color: $main-color;
+    color: map-get($main, color);
     
     &:hover,
     &:focus {
@@ -52,31 +58,10 @@ img {
     vertical-align: middle;
 }
 
-.text-primary {
-    color: $text-primary !important;
-}
-
-.text-success {
-    color: $text-success !important;
-}
-
-.bg-success {
-    background: $text-success !important;
-}
-
-.text-danger {
-    color: $text-danger !important;
-}
-
-.bg-danger {
-    background: $text-danger !important;
-}
-
-.btn {
-    white-space: normal;
-}
-
 @import 'debug';
+@import 'components';
+@import 'selectors';
 @import 'parts';
 @import 'main';
 @import 'pages';
+@import 'media';

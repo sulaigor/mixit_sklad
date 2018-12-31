@@ -10,23 +10,66 @@ $body-width: 100%;
 //$main-font: Helvetica Neue, Helvetica, Arial, sans-serif; 
 $main-font: Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;  
 
-//colors
-$main-color: #aaa;
-$main-bg: #555;
-$main-shadow: #000;
+$main: (
+    color: #aaa,
+    bg: #555,
+    shadow: #000
+);
 
-$header-br: #0089ff;
+$header: (
+//    border: #0089ff
+    border: #40BEFF
+);
 
-$content-bg: #ddd;
-$content-color: #888;
+$content: (
+    color: #888,
+    bg: #ddd
+);
 
+$tableHead: (
+    color: #eee,
+    bg: #333
+);
+
+$text: (
+    primary: #333,
+//    success: #3dc75c,
+    success: #13a328,
+    danger: #b91a28
+);
+
+$button: (
+    bg: #333,
+    hover: #eee
+);
+
+$mixit-color: #fa0;
 $login-bg: #000;
 $form-bg: #fff;
 
-$tableHead-color: #eee;
-$tableHead-bg: #222;
+// transition setting
+$transition-set: (
+    time: .2s,
+    animate: ease
+);
 
-$text-primary: #333;
-//$text-success: #3dc75c;
-$text-success: #13a328;
-$text-danger: #d0656f;
+// media queries breakpoints
+$bootstrap-bp: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    lx: 1200px
+);
+
+// new selectors
+$max-heights: (
+    40em, 45em, 50em
+);
+
+//$max-heights: (
+//    selector: 'max_h',
+//    css: 'max-height',
+//    1: 40em, 
+//    2: 45em, 
+//    3: 50em
+//);

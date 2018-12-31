@@ -1,0 +1,84 @@
+//
+//  COMPONENTS OF APP, BUTTONS
+
+.fake-input {
+    display: block;
+    max-height: 4em;
+    color: darken(map-get($content, color), 20%);
+    background: lighten(map-get($content, bg), 10%);
+    border: .1em solid darken(map-get($content, color), 20%);
+    border-radius: .2em;
+    box-shadow: 0px 0px 10px -1px rgba(map-get($main, shadow), .6);
+    text-align: center;
+    line-height: 3.8em;
+
+    & span {
+        font-size: 125%;
+        opacity: .3;
+        letter-spacing: .08em;
+
+        //&:before {
+        //    content: 'Čárový kód';
+        //}
+    }
+}
+
+.mixit-btn {
+    padding: .6em 3em .7em;
+    text-align: center;
+//    text-transform: uppercase;
+
+    color: $mixit-color;
+    background: map-get($button, bg);
+    border: 0.18em solid $mixit-color;
+    border-radius: 2em;
+
+    @include transition;;
+
+    @include hover {
+        color: map-get($main, color);
+        background: map-get($button, hover);
+    }
+}
+
+.login-btn {
+    padding: .4em .8em .4em;
+    border: .1em solid map-get($main, color);
+    z-index: 100;
+    
+    @include transition;
+    
+    @include hover {
+        background: map-get($main, color);
+        color: map-get($main, bg);
+    }
+}
+
+.user-link {
+    @include transition;
+
+    @include hover {
+        color: darken(map-get($main, color), 50%);
+
+        & img {
+            opacity: 1;
+        }
+    }
+
+    & img {
+        @include transition;
+        width: 6em;
+        margin-top: .5em;
+        opacity: .6;
+    }
+
+    & span {
+        display: block;
+        font-weight: bold;
+        letter-spacing: .05em;
+    }
+    
+    & .fas {
+        margin-right: .2em;
+    }
+}

@@ -42,6 +42,12 @@ class User
         {
             return $this->first_name .' '. $this->last_name;
         }
+    
+        public function getLogName()
+        {
+            return iconv("utf-8", "us-ascii//TRANSLIT",
+                strtolower($this->first_name) .'-'. strtolower($this->last_name));
+        }
 
         /**
          * User constructor.

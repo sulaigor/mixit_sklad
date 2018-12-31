@@ -2,9 +2,15 @@
 //    MIXINS
 
 @mixin clearfix {
-	&:before,
-	&:after { content: " "; display: table; }
-	&:after { clear: both; }
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
 }
 
 @mixin left {
@@ -15,6 +21,56 @@
     float: right;
 }
 
-@mixin transition($time: .4s) {
-    transition: all $time ease;
+@mixin transition($time: map-get($transition-set, time), 
+    $effect: map-get($transition-set, animate)) {
+    transition: all $time $effect;
+//    transition: all $time cubic-bezier(0.680, -0.550, 0.265, 1.550);
 }
+
+@mixin hover {    
+    &:hover,
+    &:focus,
+    &.hover {
+        @content;
+    }
+}
+
+@mixin breakpoint($breakpoint, $data: $bootstrap-bp) {
+    $size: map-get($data, $breakpoint);
+    
+    @media screen and (max-width: $size) {
+        @content;
+    }
+}
+
+@function delete-value($item) {
+    $values: ('em', 'px', '%');
+    
+    @each $value in $values {
+        @if str-index(#{$item}, $value) {
+            @return str-slice(#{$item}, 0, str-index(#{$item}, $value) - 1);
+        }        
+    }
+
+    @return $item;
+}
+
+@mixin create-selectors($selector, $css, $data) {    
+    
+    @each $item in $data {
+        .#{$selector}-#{delete-value($item)} {
+            #{$css}: $item;
+        }
+    }    
+}
+
+//@mixin create-selectors($data) {
+//    $selector: map-get($data, selector);
+//    $css: map-get($data, css);
+//    
+//    @for $i from 1 through length($data) - 2 {
+//        .#{$selector}-#{delete-value(map-get($data, $i))} {
+//            #{$css}: map-get($data, $i);
+//        }        
+//    }
+//}

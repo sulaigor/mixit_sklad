@@ -1,0 +1,29 @@
+//
+//  USEFULL SELECTORS OF CHANGING EXISTING SELECTORS
+
+@include create-selectors('max_h', 'max-height', $max-heights);
+//@include create-selectors($max-heights);
+
+.text-primary {
+    color: map-get($text, primary) !important;
+}
+
+.text-success {
+    color: lighten(map-get($text, success), 10%) !important;
+}
+
+.bg-success {
+    background: map-get($text, success) !important;
+}
+
+.text-danger {
+    color: lighten(map-get($text, danger), 20%) !important;
+}
+
+.bg-danger {
+    background: map-get($text, danger) !important;
+}
+
+.btn {
+    white-space: normal;
+}
