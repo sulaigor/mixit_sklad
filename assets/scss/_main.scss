@@ -8,7 +8,7 @@
     
     width: 100%;    
     
-//    background: url('../img/mani-bg_pattern.png') lighten(map-get($main, bg), 20%);
+//    background: url('../img/main-bg_pattern.png') lighten(map-get($main, bg), 20%);
     background: url('../img/users-bg_pattern.png') map-get($content, bg);
     color: darken(map-get($main, color), 35%);
     border-radius: .3em;
@@ -29,6 +29,8 @@
 }
 
 .main-header {
+//    display: flex;
+//    flex-direction: row;
     min-height: 6em;
     
     & h1 {
@@ -37,6 +39,39 @@
         font-weight: 100;
         letter-spacing: .06em;
 //        text-shadow: -2px 2px 2px rgba(map-get($main, shadow) , .6);    
+    }
+    
+    & .navigation {
+        justify-content: flex-start;
+        border-bottom: .15em solid darken($mixit-color, 2%);
+        
+        font-size: 120%;
+        line-height: 3em;
+        margin: 1em auto 0;
+        padding: 0;
+        
+        & li {
+            margin-right: .1em;
+            
+            & a {
+                border-bottom: none;
+                padding: .8em 1em 1em;
+                border-radius: .4em .4em 0 0;
+                
+                &%placeholder-main_nav {
+                    color: map-get($content, color);         
+                    background: darken($mixit-color, 2%);            
+                }    
+        
+                &.selected {
+                    @extend %placeholder-main_nav;   
+                }        
+
+                @include hover {
+                    @extend %placeholder-main_nav;
+                }
+            }
+        }
     }
     
     & .header-content {

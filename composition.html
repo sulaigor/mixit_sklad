@@ -14,12 +14,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <title>mixit / Kompletace balíků</title>
+    <title>mixit / Vlož na pozici</title>
 </head>
 
 <body>
     <header class="header container-fluid">
-        <nav class="navigation">
+        <nav class="navigation d-none">
             <ul class="user-nav">
                 <li><a class="selected" href=""><i class="fas fa-box"></i>Kompletace balíků</a></li>
                 <li><a href="setting.html"><i class="fas fa-cog"></i>Nastavení</a></li>
@@ -28,6 +28,10 @@
                 <li><a href="tests.html"><i class="fas fa-tachometer-alt"></i>Testy</a></li>
             </ul>
         </nav>
+        <div class="btn-group">
+            <a href="ean.html" class="mixit-btn">Tisk etikety</a>            
+            <a href="ean.html" class="mixit-btn">Zabaleno</a>            
+        </div>
         <div class="login-container">
             <a class="login-btn" href="login.html">Přihlásit se</a>
             <p class="d-none">Igor Šula</p>
@@ -37,14 +41,20 @@
     <main class="main">
         <div class="container-fluid">
             <header class="main-header">
-                <h1>Načtěte objednávku</h1>                
+                <ul class="navigation col-8">
+                    <li><a href="printing.html">Informace</a></li>
+                    <li><a class="selected" href="">Složení</a></li>
+                </ul>
             </header>
-            <div class="ean main-content">
-                <div class="fake-input col-10">
-                    <span>Čárový kód</span>
-                </div>
-                <a class="mixit-btn" href="index.html">Zrušit kompletaci</a>
-            </div>
+            <section class="composition-page main-content col-8">
+                <ul class="col-12 max_h-19">
+                    <li>Drink Mixit - Kakao <span>60g</span></li>
+                    <li>Drink Mixit - Banán a Jahoda <span>150g</span></li>
+                    <li>Drink Mixit - Borůvka <span>120g</span></li>
+                    <li>Drink Mixit - Vánoční <span>180g</span></li>
+                    <li>Drink Mixit - Kává <span>60g</span></li>
+                </ul>
+            </section>            
         </div>
     </main>
 

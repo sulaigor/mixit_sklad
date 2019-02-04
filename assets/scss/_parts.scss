@@ -2,10 +2,24 @@
 //  SETTING OF PARTS CONTENT VIEW
 
 .header {
+    display: flex;
+    justify-content: center;
     position: relative;
     height: 3.5em;
     font-size: 150%;
     padding: 0 .3333em;
+    
+    & .btn-group {
+        align-self: center;
+        
+        & .mixit-btn {
+            margin-right: .5em;
+            
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
 }
 
 .footer {
@@ -48,17 +62,17 @@
         
         @include transition;
         
-        &%placeholder {
+        &%placeholder-header_nav {
             color: lighten(map-get($main, color), 35%);         
             border-bottom-color: map-get($header, border);            
         }    
         
         &.selected {
-            @extend %placeholder;   
+            @extend %placeholder-header_nav;   
         }        
         
         @include hover {
-            @extend %placeholder;
+            @extend %placeholder-header_nav;
         }
     }
 }

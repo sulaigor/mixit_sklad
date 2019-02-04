@@ -85,7 +85,6 @@ img {
   color: #aaa;
   background: #eee;
 }
-
 .login-btn {
   padding: 0.4em 0.8em 0.4em;
   border: 0.1em solid #aaa;
@@ -119,6 +118,83 @@ img {
 }
 .user-link .fas {
   margin-right: 0.2em;
+}
+
+.stand h3 {
+  font-size: 200%;
+  text-align: left;
+  padding-left: 0.5em;
+}
+.stand h3 strong {
+  padding: 0.1em 1em;
+  margin-left: 14.75%;
+  background: #000;
+  color: #f5a300;
+  border-radius: 1em;
+}
+.stand table {
+  font-size: 400%;
+  border: 0.15em solid #000;
+  border-collapse: collapse;
+  box-shadow: 0.25em 0.25em 0.2em -0.04em rgba(0, 0, 0, 0.7);
+}
+.stand td {
+  position: relative;
+  width: 1em;
+  height: 2em;
+  border: 0.08em solid #000;
+  box-shadow: inset 0.215em 0.2em 0.2em -0.04em rgba(0, 0, 0, 0.7);
+}
+.stand td.active {
+  color: #000;
+  animation: 1s infinite ease pulsar;
+}
+@keyframes pulsar {
+  0% {
+    background: rgba(255, 170, 0, 0.6);
+  }
+  50% {
+    background: rgba(255, 170, 0, 0.8);
+  }
+  100% {
+    background: rgba(255, 170, 0, 0.6);
+  }
+}
+.stand td span {
+  position: absolute;
+  font-size: 40%;
+  top: 1.6em;
+  transform: rotate(-75deg);
+}
+.stand thead td span {
+  left: -0.6em;
+}
+.stand tbody td span {
+  left: 0.6em;
+}
+
+.max_h-10 {
+  max-height: 10em;
+}
+
+.max_h-18 {
+  max-height: 18em;
+}
+
+.max_h-19 {
+  max-height: 19em;
+}
+
+.max_h-20 {
+  max-height: 20em;
+}
+
+.max_h-30 {
+  max-height: 30em;
+}
+
+.max_h-35 {
+  max-height: 35em;
 }
 
 .max_h-40 {
@@ -158,10 +234,21 @@ img {
 }
 
 .header {
+  display: flex;
+  justify-content: center;
   position: relative;
   height: 3.5em;
   font-size: 150%;
   padding: 0 0.3333em;
+}
+.header .btn-group {
+  align-self: center;
+}
+.header .btn-group .mixit-btn {
+  margin-right: 0.5em;
+}
+.header .btn-group .mixit-btn:last-child {
+  margin-right: 0;
 }
 
 .footer {
@@ -303,6 +390,26 @@ img {
   font-weight: 100;
   letter-spacing: 0.06em;
 }
+.main-header .navigation {
+  justify-content: flex-start;
+  border-bottom: 0.15em solid #f5a300;
+  font-size: 120%;
+  line-height: 3em;
+  margin: 1em auto 0;
+  padding: 0;
+}
+.main-header .navigation li {
+  margin-right: 0.1em;
+}
+.main-header .navigation li a {
+  border-bottom: none;
+  padding: 0.8em 1em 1em;
+  border-radius: 0.4em 0.4em 0 0;
+}
+.main-header .navigation li a:hover, .main-header .navigation li a:focus, .main-header .navigation li a.hover, .main-header .navigation li a.selected {
+  color: #888;
+  background: #f5a300;
+}
 .main-header .header-content {
   font-size: 90%;
 }
@@ -415,9 +522,14 @@ img {
 }
 
 .ean {
+  flex-direction: column;
   justify-content: center;
   align-content: center;
   align-items: center;
+}
+.ean .mixit-btn {
+  margin-top: 2em;
+  font-size: 150%;
 }
 
 .tests {
@@ -583,6 +695,39 @@ img {
 }
 .state-container .information-box li p span {
   letter-spacing: 0.06em;
+}
+
+.stand-page {
+  justify-content: space-around;
+}
+.stand-page .product {
+  align-self: center;
+}
+.stand-page .stand {
+  font-size: 100%;
+}
+
+.information-page, .composition-page {
+  align-self: center;
+  justify-content: center;
+  color: #484848;
+  font-size: 200%;
+}
+.information-page ul li, .composition-page ul li {
+  padding: 0.3em 0 0.3em 1em;
+  margin-bottom: 0.2em;
+  border-bottom: 0.15em solid #888;
+}
+
+.composition-page ul {
+  overflow: auto;
+}
+.composition-page ul li {
+  display: flex;
+  justify-content: space-between;
+}
+.composition-page ul li span {
+  margin-right: 1em;
 }
 
 /*# sourceMappingURL=style.css.map */

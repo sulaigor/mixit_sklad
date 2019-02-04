@@ -99,9 +99,15 @@
 }
 
 .ean {
+    flex-direction: column;
     justify-content: center;
     align-content: center;
     align-items: center;
+    
+    & .mixit-btn {
+        margin-top: 2em;
+        font-size: 150%;
+    }
 }
 
 .tests {
@@ -317,6 +323,51 @@
                 & span {
                     letter-spacing: .06em;
                 }
+            }
+        }
+    }
+}
+
+.stand-page {
+    justify-content: space-around;
+
+    & .product {
+        align-self: center;
+    }
+    
+    & .stand {
+        font-size: 100%;
+    }
+}
+
+.information-page {
+    align-self: center;
+    justify-content: center;
+    color: darken(map-get($content, color), 25%);
+    
+    font-size: 200%;
+    
+    & ul {
+        & li {
+            padding: .3em 0 .3em 1em;
+            margin-bottom: .2em;
+            border-bottom: .15em solid map-get($content, color);
+        }
+    }
+}
+
+.composition-page {
+    @extend .information-page;
+    
+    & ul {        
+        overflow: auto;
+        
+        & li {
+            display: flex;
+            justify-content: space-between;
+            
+            & span {
+                margin-right: 1em;
             }
         }
     }
